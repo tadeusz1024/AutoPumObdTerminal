@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/switchBT"
+            android:checked="false"
+            android:text="Bluetooth Off  "
+            android:layout_gravity="right"
+            android:textColor="#000080"
+            android:textStyle="normal"
+
+            android:theme="@style/mSwitchBT"
+
+
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="RX:"
+                android:textStyle="bold" />
+            <ScrollView
+                android:layout_width="320dp"
+                android:layout_height="320px">
+                <TextView
+                    android:id="@+id/readBuffer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:ellipsize="end"
+                    android:maxLines="10"
+                    android:text="&lt;Bufor odczytu>" />
+            </ScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="Podaj kod OBD:"
+                android:textSize="10sp" />
+
+            <EditText
+                android:id="@+id/readOBD"
+                android:layout_width="250px"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ellipsize="end"
+                android:inputType="text"
+                android:maxLength="4"
+                android:maxLines="1"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/write"
+                android:textSize="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@+id/off"
+                android:layout_toEndOf="@+id/checkboxLED1"
+                android:layout_toRightOf="@+id/checkboxLED1"
+                android:text="Wyślij" />
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:layout_weight="1"
+                android:layout_below="@+id/off"
+                android:layout_toEndOf="@+id/checkboxLED1"
+                android:layout_toRightOf="@+id/checkboxLED1"
+                android:text="Zeruj" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text="Status:"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:text="&lt;Bluetooth Status>"
+                android:id="@+id/bluetoothStatus"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_centerHorizontal="true"
+                android:layout_alignTop="@+id/checkboxLED1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Szukaj urządzeń"
+                android:id="@+id/discover"
+                android:layout_below="@+id/off" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Sparowane urządzenia"
+                android:id="@+id/PairedBtn"
+                android:layout_below="@+id/scan" />
+        </LinearLayout>
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/devicesListView"
+            android:choiceMode="singleChoice"
+            android:layout_below="@+id/PairedBtn"
+            android:layout_alignRight="@+id/off"
+            android:layout_alignEnd="@+id/off" />
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
